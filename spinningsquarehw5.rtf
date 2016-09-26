@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 var s = 0;\
+var r = 0;\
+var t = 0;\
+var bDir = 1;\
+var ry = 0;\
+var ty = 0;\
+\
+function setup()\{\
+  createCanvas(800,500);\
+  background(255);\
+  rectMode(CENTER);\
+  angleMode(DEGREES);\
+\}\
+\
+function draw ()\{\
+  translate(width/2,height/2);\
+  r=r+10;\
+\
+  if(t > 300)\{\
+    bDir = 0;\
+    ry = random(0, height/10);\
+    ty = random(height/2);\
+  \}\
+  if(t < -300)\{\
+    bDir = 1;\
+    ry = random(0, height/10);\
+    ty = random(height/2);\
+  \}\
+\
+  if(bDir==1)\{\
+    t++;\
+  \} else\{\
+    t--;\
+  \}\
+  translate(t,ty);\
+  // scale(s);\
+  rotate(r);\
+  rect(0,ry,50,50);\
+\
+\}}
